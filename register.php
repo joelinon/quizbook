@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->bind_param("sss", $username, $email, $hashed_password);
 
             if ($stmt->execute()) {
-                $message = "Registration successful! You can now log in.";
+                $message = "Registration successful!";
                 $toastClass = "success";
             } else {
                 $message = "Error: " . $stmt->error;
