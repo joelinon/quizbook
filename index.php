@@ -15,57 +15,40 @@ $username = htmlspecialchars($_SESSION['username']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuizBook – Start</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Climate+Crisis:YEAR@1979&family=Honk:MORF@15&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" class="css">
 </head>
-<body>
-
-<nav>
-    <div class="logo">Quiz<span>Book</span></div>
-    <div class="nav-right">
-        <span class="nav-user">Inloggad som <strong><?= $username ?></strong></span>
-        <a href="logout.php" class="btn-logout">Logga ut</a>
-    </div>
-</nav>
+<?php include 'head.php'; ?>
+<body class='background normal'>
 
 <main>
-    <p class="hero-label">Välkommen tillbaka</p>
-    <h1>Hej, <em><?= $username ?></em>!</h1>
-    <p class="hero-sub">Vad vill du göra idag? Starta ett quiz, utforska frågor eller se dina resultat.</p>
-
+    <a href="#">
     <div class="cards">
-        <a href="#" class="card">
-            <div class="card-icon">⚡</div>
-            <h3>Starta quiz</h3>
-            <p>Testa dina kunskaper med ett slumpmässigt quiz.</p>
-            <span class="card-badge">Spela nu</span>
-        </a>
-        <a href="#" class="card">
-            <div class="card-icon">📚</div>
-            <h3>Alla frågor</h3>
-            <p>Bläddra bland alla tillgängliga frågor i databasen.</p>
-            <span class="card-badge">Utforska</span>
-        </a>
-        <a href="#" class="card">
-            <div class="card-icon">🏆</div>
-            <h3>Resultat</h3>
-            <p>Se dina tidigare resultat och hur du placerar dig.</p>
-            <span class="card-badge">Statistik</span>
-        </a>
-    </div>
-
-    <p class="section-title">Snabbstart</p>
+            <div></div>
+            <h3>Snabbstart</h3>
+            <p class='normal'>Starta ett slumpmässigt quiz</p>
+        
+</div>
+</a>
+<a href="quizzes.php">
+<div class="cards">
+        
+            <div></div>
+            <h3>Alla Quiz</h3>
+            <p>Bläddra bland alla tillgängliga quiz</p>
+</div>
+</a>
+<a href="create_quiz.php">
     <div class="cards">
-        <a href="#" class="card">
-            <div class="card-icon">➕</div>
-            <h3>Skapa fråga</h3>
-            <p>Lägg till egna frågor till quizet.</p>
-        </a>
-        <a href="#" class="card">
-            <div class="card-icon">⚙️</div>
-            <h3>Inställningar</h3>
-            <p>Hantera din profil och dina preferenser.</p>
-        </a>
+            <h3>Skapa Quiz</h3>
+            <p>Skapa och ladda upp ditt egna quiz</p>
     </div>
+    </a>
 </main>
-
+<footer>
+    <p>&copy;Jolleski</p>
+</footer>
 </body>
 </html>

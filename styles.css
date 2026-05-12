@@ -1,0 +1,140 @@
+@import url(färger.css);
+:root{
+    --txt: clamp(12px, 2vw, 24px);
+    --size: 100dvh;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --outline: 1px dotted red;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+    font-size: clamp(12px, 1.5vw, 20px);
+    gap: 1rem;
+}
+nav .spc{
+    flex-grow: 5;
+}
+
+.logo {
+    font-family: "Climate Crisis", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    text-shadow: 4px 0px 1px #4b4bff;
+    font-variation-settings:
+        "YEAR" 1990;
+    color: rgb(255, 255, 255);
+    font-size: clamp(24px, 4vw, 48px);
+    margin-left:0.5rem;
+}
+.logo span{
+    color: var(--standard-blue);
+    text-shadow: none;
+}
+
+.background {
+    background-color: #0f0f0f;
+    background-image: radial-gradient(circle at top right,
+            rgba(0, 140, 255, 0.25),
+            rgba(0, 140, 255, 0.15),
+            rgba(0, 140, 255, 0.10),
+            rgba(0, 140, 255, 0.05),
+            rgba(0, 140, 255, 0.02));
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100dvh;
+
+}
+.normal {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  color:white;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+span strong{
+    border-right: 3px solid white;
+    padding-right: 4px;
+}
+.user{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.25rem;
+    margin-right: 1rem;
+}
+
+.cards{
+    height: auto;
+    padding: clamp(1rem, 3vw, 2.5rem) clamp(1rem, 4vw, 3rem);
+    width: clamp(280px, 70vw, 700px);
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 100px black;
+    border: solid 3px rgba(128, 128, 128, 0.397);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+main{
+    display:grid;
+    grid-template-rows: repeat(3, 1fr);
+    place-content: center;
+    gap: 1px;
+    min-height: calc(var(--size) - 4rem); 
+    padding: 1rem;
+}
+
+h1 {
+    font-size: clamp(28px, 5vw, 56px);
+}
+h2 {
+    font-size: clamp(20px, 3vw, 40px);
+}
+h3{
+    color: var(--standard-blue);
+    font-size: clamp(16px, 2.5vw, 32px);
+}
+.cards:hover{
+    box-shadow: none;
+    transition: all 0.1s ease;
+    transform: scale(0.95);
+}
+footer{
+    text-align: center;
+    padding: 1rem;
+    color: white;
+    bottom: 0px; 
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    font-size: clamp(12px, 1.5vw, 20px);
+}
+.cards h3{
+    font-size: var(--txt);
+}
+
+.cards span{
+    font-size: var(--txt);
+}
+.cards p{
+    font-size: var(--txt);
+}
+
+/* ÄNDRAT: på riktigt smala skärmar tar korten full bredd */
+@media (max-width: 400px) {
+    .cards {
+        width: 95vw;
+    }
+}
