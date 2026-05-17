@@ -77,7 +77,7 @@ span strong{
 }
 
 .cards{
-    height: auto;
+    height: clamp(200px, 20vh, 40px);
     padding: clamp(1rem, 3vw, 2.5rem) clamp(1rem, 4vw, 3rem);
     width: clamp(280px, 70vw, 700px);
     text-align: center;
@@ -137,4 +137,13 @@ footer{
     .cards {
         width: 95vw;
     }
+}
+button{
+    background-color: var(--standard-blue);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 0.5rem 1rem;
+    font-size: clamp(16px, 3vw, 32px);
+    cursor: pointer;
 }

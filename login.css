@@ -1,58 +1,41 @@
 @import url(färger.css);
-
-*{
-    margin:0;
-    padding:0;
+@import url(styles.css);
+.cards:hover{
+    transform:none;
+    box-shadow: 0px 0px 100px black;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(1rem, 3vw, 2.5rem);
+    margin-top: 2rem;
+}
+form div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+}
+form div label {
+    margin-bottom: 0.5rem;
+}
+form > div input {
+    width: 100%;
     box-sizing: border-box;
 }
-
-.background {
-    background-color: #000;
-    background-image: radial-gradient(circle at bottom left,
-            rgba(0, 140, 255, 0.35),
-            rgba(0, 140, 255, 0.25),
-            rgba(0, 140, 255, 0.20),
-            rgba(0, 140, 255, 0.15),
-            rgba(0, 140, 255, 0.12));
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    min-height: 100dvh;
-
-}
-.logo {
-    font-family: "Climate Crisis", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    text-shadow: 4px 0px 1px #4b4bff;
-    font-variation-settings:
-        "YEAR" 1990;
-    color: rgb(255, 255, 255);
-    font-size: clamp(24px, 4vw, 48px);
-    text-align: center;
-    padding: 1rem;
-}
-.logo span{
+#reg{
     color: var(--standard-blue);
-    text-shadow: none;
+    text-decoration: underline;
+
 }
-.normal {
-  font-family: "Special Gothic Expanded One", sans-serif;
-  font-weight: 100;
-  font-style: normal;
-  color:rgb(255, 255, 255);
-  font-size: clamp(12px, 2vw, 24px);
-}
-.cards{
-    height: clamp(100px, 17dvh, 300px);
-    width: clamp(150px, 50dvh, 85vw);
-    text-align: center;
-    border-radius: 1rem;
-    box-shadow: 0px 0px 100px black;
-    border: solid 3px rgba(128, 128, 128, 0.397);
-}
-main{
-    min-height:100dvh;
-    width: 100%;
+input{
+    background: rgba(128, 128, 128, 0.103);
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    color: white;
+    border-radius: 3px;
+    padding:1px;
+    font-size: clamp(12px, 2vw, 20px);
 }
