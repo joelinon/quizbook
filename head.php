@@ -9,6 +9,6 @@ $username = htmlspecialchars($_SESSION['username']); #för användarnamnet
     <div class="spc"></div>
     <div class='user'>
         <span class='normal'><strong><?= $username ?? " " ?></strong></span>
-        <a href="logout.php">Logga ut</a>
+        <a href="logout.php" class='normal'>Logga ut</a>
     </div>
 </nav>

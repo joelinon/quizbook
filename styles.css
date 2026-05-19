@@ -9,7 +9,7 @@
     padding: 0;
     box-sizing: border-box;
     --outline: 1px dotted red;
-    user-select: none;
+    --user-select: none;
 }
 
 nav{

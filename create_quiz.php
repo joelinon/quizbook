@@ -103,6 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (!$hasError) {
                 $message = "Quizet \"" . htmlspecialchars($quizName) . "\" skapades!";
                 $toastClass = "success";
+                header('Location: success.php');
             }
 
         } else {
@@ -119,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuizBook – Skapa Quiz</title>
+    <title>QuizBook - Skapa Quiz</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis:YEAR@1979&family=Honk:MORF@15&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
@@ -127,22 +128,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body class="background">
 
-
-<nav>
-    <a href="index.php" class="logo">Quiz<span>Book</span></a>
-    <div class="nav-right">
-        <a href="index.php" class="nav-link">  Tillbaka</a>
-        <a href="logout.php" class="nav-link">Logga ut</a>
-    </div>
-</nav>
-
-
+<?php include 'head.php'; ?>
     <h1 class="normal">Skapa quiz</h1>
 <main>
     <form action="create_quiz.php" method="post" id="quizForm">
-        <!-- Quiz-namn -->
         <div class="">
-            <h3>Quiz-namn</h3>
+            <h3 class ='normal'>Quiz-namn</h3>
             <input
                 type="text"
                 name="quiz_name"

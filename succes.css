@@ -1,0 +1,12 @@
+@import url('styles.css');
+@import url('färger.css');
+h1{
+    text-align: center;
+}
+h3{
+    text-align: center;
+}
+
+#back{
+    color: var(--standard-blue);
+}

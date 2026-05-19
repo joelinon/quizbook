@@ -39,13 +39,18 @@ h1 {
 h1 {
     width: 100%;
     text-align: center;
+    color: var(--standard-blue);
 }
 
 .question-card {
     padding-top: 0.8rem;
 
 }
-
+.cards:hover{
+    box-shadow: 0px 0px 100px black !important;
+    transition: none;
+    transform: scale(1) !important;
+}
 input {
     background: rgba(128, 128, 128, 0.103);
     font-family: "Special Gothic Expanded One", sans-serif;
@@ -59,10 +64,6 @@ input {
 div button{
     margin-bottom:0;
 }
-.cards:hover{
-    box-shadow: 0px 0px 100px black;
-    transform: none;
-}
 .alternatives-grid{
     display:grid;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
@@ -75,6 +76,7 @@ div button{
     align-items: center;
     gap:1rem;
     margin-top: 1rem;
+    height: fit-content;
 }
 .btn-remove{
     background: transparent;
@@ -102,4 +104,7 @@ div button{
 }
 ::-webkit-scrollbar {
     display: none;
+}
+h3{
+    color: var(--standard-blue) !important;
 }
