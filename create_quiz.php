@@ -155,11 +155,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
         <div class="buttons-container">
-            <button type="button" class="btn-add-question" onclick="addQuestion()">
+            <button type="button" class="btn-add-question normal" onclick="addQuestion()">
             + Lägg till fråga
         </button>
 
-        <button type="submit" class="btn-submit">Spara quiz</button>
+        <button type="submit" class="btn-submit normal">Spara quiz</button>
         </div>
 
         

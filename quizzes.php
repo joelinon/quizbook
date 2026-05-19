@@ -2,7 +2,7 @@
 session_start();
 include 'config.php';
 
-$result = $conn->query("SELECT quiz_id, quiz_name FROM quiz");
+$result = $conn->query("SELECT quiz.quiz_id, quiz.quiz_name, user.username FROM quiz JOIN user ON quiz.user_id = user.id");
 ?>
 <!DOCTYPE html>
 <html lang="sv">
@@ -16,20 +16,19 @@ $result = $conn->query("SELECT quiz_id, quiz_name FROM quiz");
 </head>
 <?php include 'head.php'; ?>
 <body class="background normal">
-    <a href="index.php">Tillbaka</a>
     <h1>Alla quiz</h1>
     <?php if ($result->num_rows === 0): ?>
         <p>Inga quiz hittades.</p>
     <?php else: ?>
-        <ul>
+        <main>
             <?php while ($quiz = $result->fetch_assoc()): ?>
-                <li>
-                    <a href="questions.php?quiz_id=<?= $quiz['quiz_id'] ?>">
-                        <?= htmlspecialchars($quiz['quiz_name']) ?>
-                    </a>
-                </li>
+                <a href="questions.php?quiz_id=<?= $quiz['quiz_id'] ?>">
+                <div class="cards">
+                        <?= htmlspecialchars($quiz['quiz_name']) ?> <span id='creator'><?=htmlspecialchars($quiz['username'])?></span>
+                </div>
+                </a>
             <?php endwhile; ?>
-        </ul>
+            </main>
     <?php endif; ?>
 
     <?php $conn->close(); ?>

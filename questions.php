@@ -31,7 +31,7 @@ $conn->close();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis:YEAR@1979&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="questions.css">
 </head>
 <?php include 'head.php'; ?>
 <body class="background normal">
@@ -42,10 +42,10 @@ $conn->close();
     <div id="game">
         <p id="counter"></p>
         <div class="cards" id="card">
-            <p id="question"></p>
-            <div id="alts"></div>
+            <p id="question" class='normal'></p>
+            <div id="alts" class='normal'></div>
             <p id="feedback"></p>
-            <button id="btn-next" onclick="next()">N&auml;sta</button>
+            <button id="btn-next" class="normal" onclick="next()">Nästa</button>
         </div>
     </div>
 
@@ -54,8 +54,8 @@ $conn->close();
             <h2 id="result-title"></h2>
             <p id="result-score"></p>
             <p id="result-sub"></p>
-            <button onclick="restart()">Spela igen</button>
-            <a href="quizzes.php">Alla quiz</a>
+            <button onclick="restart()" class='normal'>Spela igen</button>
+            <a href="quizzes.php">Tillbaka</a>
         </div>
     </div>
 </main>
@@ -76,6 +76,7 @@ function load() {
     alts.innerHTML = '';
     ['alternative1','alternative2','alternative3','alternative4'].forEach(key => {
         const btn = document.createElement('button');
+        btn.className += "" + 'normal';
         btn.textContent = q[key];
         btn.dataset.key = key;
         btn.onclick = () => pick(key);
@@ -92,11 +93,11 @@ function pick(chosen) {
     document.querySelectorAll('#alts button').forEach(btn => btn.disabled = true);
 
     document.getElementById('feedback').textContent =
-        chosen === correct ? 'R\u00e4tt!' : 'Fel! R\u00e4tt svar: ' + Q[i][correct];
+        chosen === correct ? 'Rätt!' : 'Fel! Rätt svar: ' + Q[i][correct];
 
     const nextBtn = document.getElementById('btn-next');
     nextBtn.style.display = 'block';
-    nextBtn.textContent = i < Q.length - 1 ? 'N\u00e4sta' : 'Se resultat';
+    nextBtn.textContent = i < Q.length - 1 ? 'Nästa' : 'Se resultat';
 }
 
 function next() {
@@ -109,8 +110,8 @@ function next() {
         const pct = score / Q.length;
         document.getElementById('result-score').textContent = score + ' / ' + Q.length;
         document.getElementById('result-title').textContent =
-            pct === 1 ? 'Perfekt!' : pct >= 0.8 ? 'Bra jobbat!' : pct >= 0.5 ? 'Helt okej!' : 'F\u00f6rs\u00f6k igen!';
-        document.getElementById('result-sub').textContent = Math.round(pct * 100) + '% r\u00e4tt';
+            pct === 1 ? 'Perfekt!' : pct >= 0.8 ? 'Bra jobbat!' : pct >= 0.5 ? 'Helt okej!' : 'Försök igen!';
+        document.getElementById('result-sub').textContent = Math.round(pct * 100) + '% rätt';
     }
 }
 
@@ -122,7 +123,7 @@ function restart() {
 }
 
 if (Q.length > 0) load();
-else document.getElementById('card').textContent = 'Inga fr\u00e5gor i detta quiz.';
+else document.getElementById('card').textContent = 'Inga frågor i detta quiz.';
 </script>
 </body>
 </html>

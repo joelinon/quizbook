@@ -1,0 +1,32 @@
+@import url('styles.css');
+@import url('färger.css');
+
+.cards:hover{
+    box-shadow: 0px 0px 100px black !important;
+    transition: none;
+    transform: scale(1) !important;
+}
+.cards{
+    height: fit-content !important;
+    width: fit-content !important;
+}
+button{
+    margin: 3px 3px;
+}
+#btn-next{
+    margin: auto auto;
+}
+h1{
+    text-align: center;
+}
+main{
+    margin-top: 10dvh;
+}
+@media (max-width:420px){
+    main{
+        margin-top:20dvh !important;
+        
+    }
+
+
+}

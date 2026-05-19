@@ -1,1 +1,14 @@
 @import url('styles.css');
+h1{
+    text-align: center;
+    z-index: 5 !important;
+}
+#creator{
+    color: var(--standard-blue);
+}
+.cards{
+    display: grid;
+    place-content: center;
+    font-size: clamp(16px, 2.5vw, 32px);
+    z-index:-1 !important; 
+}

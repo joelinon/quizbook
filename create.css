@@ -98,7 +98,8 @@ div button{
 }
 .q-number{
     margin-left: 19dvh;
+    width: 5rem;
 }
-::-webkit-scrollbar{
-    background: transparent;
+::-webkit-scrollbar {
+    display: none;
 }

@@ -24,7 +24,7 @@ $username = htmlspecialchars($_SESSION['username']);
 <body class='background normal'>
 
 <main>
-    <a href="#">
+    <a href="quickstart.php">
     <div class="cards">
             <div></div>
             <h3>Snabbstart</h3>

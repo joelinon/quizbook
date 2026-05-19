@@ -9,6 +9,7 @@
     padding: 0;
     box-sizing: border-box;
     --outline: 1px dotted red;
+    user-select: none;
 }
 
 nav{
@@ -109,7 +110,7 @@ h3{
 .cards:hover{
     box-shadow: none;
     transition: all 0.1s ease;
-    transform: scale(0.95);
+    transform: scale(0.99);
 }
 footer{
     text-align: center;
@@ -132,18 +133,25 @@ footer{
     font-size: var(--txt);
 }
 
-/* ÄNDRAT: på riktigt smala skärmar tar korten full bredd */
-@media (max-width: 400px) {
+
+@media (max-width: 420px) {
     .cards {
         width: 95vw;
+        height: 20dvh;
     }
 }
 button{
-    background-color: var(--standard-blue);
+    background-color: var(--btn);
     color: white;
     border: none;
-    border-radius: 3px;
+    border-radius: 8px;
     padding: 0.5rem 1rem;
     font-size: clamp(16px, 3vw, 32px);
     cursor: pointer;
+    transition: 0.5s all ease;
+}
+button:hover {
+    background-color: var(--standard-blue);
+    transition: 0.2s all ease;
+    transform: scale(0.95);
 }
