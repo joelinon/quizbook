@@ -1,110 +1,109 @@
 @import url(styles.css);
-@import url(färger.css);
+@layer components {
+    h1 {
+        height: clamp(50px, 8vw, 120px);
+        width: 100%;
+        text-align: center;
+        color: var(--standard-blue);
+    }
 
-* {
-    --outline: red dotted 1px;
-}
+    #quizForm {
+        display: flex;
+        flex-direction: column;
+        min-height: calc(100vh - 120px);
+        height: unset;
+        gap: 1rem;
+    }
 
-h1 {
-    height: clamp(50px, 8vw, 120px);
-    font-size: clamp(28px, 5vw, 56px);
-}
+    .questions-list {
+        height: 30dvh;
+        height: unset;
+        overflow-y: unset;
+    }
 
-#quizForm {
-    top: 1px;
-    display: flex;
-    flex-direction: column;
-    height: calc(100vh - 120px);
-    gap: 1rem;
-}
+    .buttons-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        margin-top: auto;
+        padding-bottom: 2rem;
+    }
 
-.questions-list {
-    height: 30dvh;
-    overflow-y: auto;
-}
+    .background { height: 100%; }
 
-.buttons-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-    margin-top: auto;
-    padding-bottom: 2rem;
-}
+    .question-card { padding-top: 0.8rem; }
 
-.background {
-    height: 100%;
-}
+    input {
+        background: rgba(128, 128, 128, 0.103);
+        font-family: "Special Gothic Expanded One", sans-serif;
+        font-weight: 100;
+        font-style: normal;
+        color: white;
+        border-radius: 3px;
+        padding: 1px;
+        font-size: clamp(12px, 2vw, 20px);
+    }
 
-h1 {
-    width: 100%;
-    text-align: center;
-    color: var(--standard-blue);
-}
+    div button { margin-bottom: 0; }
 
-.question-card {
-    padding-top: 0.8rem;
+    .alternatives-grid {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 1rem;
+        padding-top: 2rem;
+    }
 
-}
-.cards:hover{
-    box-shadow: 0px 0px 100px black !important;
-    transition: none;
-    transform: scale(1) !important;
-}
-input {
-    background: rgba(128, 128, 128, 0.103);
-    font-family: "Special Gothic Expanded One", sans-serif;
-    font-weight: 100;
-    font-style: normal;
-    color: white;
-    border-radius: 3px;
-    padding:1px;
-    font-size: clamp(12px, 2vw, 20px);
-}
-div button{
-    margin-bottom:0;
-}
-.alternatives-grid{
-    display:grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    gap:1rem;
-    padding-top:2rem;
-}
-#questionsList{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    gap:1rem;
-    margin-top: 1rem;
-    height: fit-content;
-}
-.btn-remove{
-    background: transparent;
-    color: white;
-    border: 1px transparent;
-    box-shadow: 0px 0px 1px black;
-    font-size: clamp(16px, 3vw, 32px);
-    height: clamp(30px, 5vw, 60px);
-    width: clamp(30px, 5vw, 60px);
-    display: grid;
-    place-content: center;
-    border-radius: 10%;
-}
-.q-header{
+    #questionsList {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1rem;
+        height: fit-content;
+    }
+
+    .btn-remove {
+        background: transparent;
+        color: white;
+        border: 1px transparent;
+        box-shadow: 0px 0px 1px black;
+        font-size: clamp(16px, 3vw, 32px);
+        height: clamp(30px, 5vw, 60px);
+        width: clamp(30px, 5vw, 60px);
+        display: grid;
+        place-content: center;
+        border-radius: 10%;
+    }
+    
+   .q-header {
     display: flex;
     flex-direction: row;
-    gap: 8rem;
-    justify-content: center;
-    width: 50dvh;
-    font-size: clamp(14px, 2.5vw, 28px);
+    align-items: center;
+    width: 100%;
 }
-.q-number{
-    margin-left: 19dvh;
-    width: 5rem;
+
+.q-number {
+    flex: 1;
+    text-align: center;
 }
-::-webkit-scrollbar {
-    display: none;
+
+    ::-webkit-scrollbar { display: none; }
+
+    h3 { color: var(--standard-blue); }
+
+
+@layer utilities {
+    #questionsList:hover {
+        box-shadow: 0px 0px 100px black;
+        transform: none;
+        transition: none;
+        cursor: default;
+    }
+    @layer utilities {
+    h1 {
+        color: var(--standard-blue);
+    }
 }
-h3{
-    color: var(--standard-blue) !important;
+}
 }

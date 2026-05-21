@@ -1,41 +1,48 @@
-@import url(färger.css);
 @import url(styles.css);
-.cards:hover{
-    transform:none;
-    box-shadow: 0px 0px 100px black;
-}
-form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: clamp(1rem, 3vw, 2.5rem);
-    margin-top: 2rem;
-}
-form div {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 300px;
-}
-form div label {
-    margin-bottom: 0.5rem;
-}
-form > div input {
-    width: 100%;
-    box-sizing: border-box;
-}
-#reg{
-    color: var(--standard-blue);
-    text-decoration: underline;
 
+@layer components {
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(1rem, 3vw, 2.5rem);
+        margin-top: 2rem;
+    }
+
+    form div {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    form div label { margin-bottom: 0.5rem; }
+
+    form > div input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #reg {
+        color: var(--standard-blue);
+        text-decoration: underline;
+    }
+
+    input {
+        background: rgba(128, 128, 128, 0.103);
+        font-family: "Special Gothic Expanded One", sans-serif;
+        font-weight: 100;
+        font-style: normal;
+        color: white;
+        border-radius: 3px;
+        padding: 1px;
+        font-size: clamp(12px, 2vw, 20px);
+    }
 }
-input{
-    background: rgba(128, 128, 128, 0.103);
-    font-family: "Special Gothic Expanded One", sans-serif;
-    font-weight: 100;
-    font-style: normal;
-    color: white;
-    border-radius: 3px;
-    padding:1px;
-    font-size: clamp(12px, 2vw, 20px);
+
+@layer utilities {
+    .cards:hover {
+        transform: none;
+        box-shadow: 0px 0px 100px black;
+    }
 }
