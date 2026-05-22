@@ -16,9 +16,11 @@
         max-width: 300px;
     }
 
-    form div label { margin-bottom: 0.5rem; }
+    form div label {
+        margin-bottom: 0.5rem;
+    }
 
-    form > div input {
+    form>div input {
         width: 100%;
         box-sizing: border-box;
     }

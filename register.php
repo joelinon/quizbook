@@ -91,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="password" id="password" name="password" required>
             </div>
 
-            <button type="submit">Skapa konto</button>
+            <button class="normal" type="submit">Skapa konto</button>
 
             <p class="login-link">Har du redan ett konto? <a id="reg" href="login.php">Logga in</a></p>
         </form>

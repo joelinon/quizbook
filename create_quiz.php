@@ -162,7 +162,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       Skapar ett nytt fråge-kort och lägger till det i listan. Varje fält namnges med questions[index][fältnamn] så att PHP. tar emot dem som en array.
      */
     function addQuestion() {
-        const index = document.querySelectorAll('.question-card').length; // Basera indexet på antalet befintliga frågor
+        const index = document.querySelectorAll('.question-card').length; // Basera indexet på antalet frågor
 
         const list = document.getElementById('questionsList');
 

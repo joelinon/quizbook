@@ -1,8 +1,14 @@
 @import url('styles.css');
 
 @layer components {
-    h1 { text-align: center; }
-    #creator { color: var(--standard-blue); }
+    h1 {
+        text-align: center;
+    }
+
+    #creator {
+        color: var(--standard-blue);
+    }
+
     .cards {
         display: grid;
         place-content: center;
