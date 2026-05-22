@@ -86,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     break;
                 }
 
-                // Koppla parametrarna till SQL och kör den
+                // Koppla parameterararna till SQL och kör den
                 $stmtQ->bind_param("issssss", $quizId, $questName, $alt1, $alt2, $alt3, $alt4, $correct);
 
                 if (!$stmtQ->execute()) {
@@ -162,18 +162,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       Skapar ett nytt fråge-kort och lägger till det i listan. Varje fält namnges med questions[index][fältnamn] så att PHP. tar emot dem som en array.
      */
     function addQuestion() {
-        const index = document.querySelectorAll('.question-card').length; // Basera indexet på antalet frågor
+        const index = document.querySelectorAll('.question-card').length; // Basea indexet på antal frågor
 
         const list = document.getElementById('questionsList');
 
-        // Skapa ett nytt div-element för frågekortet
+        // Skapa ny div för frågan
         const card = document.createElement('div');
         card.className = 'question-card normal';
         card.id = `question-${index}`;
 
         // Bygg HTML-strukturen för kortet
-        // Notera att radioknapparna delar samma name inom frågan,
-        // och value sätts till alternativets namn (alt1/alt2/alt3/alt4)
         card.innerHTML = `
             <div class="q-header">
                 <span class="q-number">Fråga ${index + 1}</span>
@@ -234,7 +232,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     function removeQuestion(index) {
         const card = document.getElementById(`question-${index}`);
         if (card) {
-            // Animera bort kortet innan det tas bort ur DOM
+            // Animera bort kortet innan det tas bort
             card.style.transition = 'opacity 0.2s, transform 0.2s';
             card.style.opacity = '0';
             card.style.transform = 'translateY(-8px)';
